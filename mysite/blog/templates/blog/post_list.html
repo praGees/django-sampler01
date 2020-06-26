@@ -9,19 +9,14 @@
         <h1><a href="#">Blog kulinarny</a></h1>
 
     </div>
-    <div>
-        <p>20.06.2020, 14.45</p>
-        <h1>Pierwszy post</h1>
-        <p>Siemanko, witajcie w mojej kuchni
-        Dzisiaj udowodnie wam, u-do-wod-nie wam!
-        Ze jedziedze z marketu, znacznie rozni sie od restauracyjnego.</p>
-    </div>
-    <div>
-        <p>21.06.2020, 12.45</p>
-        <h1>Drugi post, juz troche śmielej</h1>
-        <p>Dzisiaj, porozmawiamy o tym, jak łatwo mozemy skarmelizować cebule.
-        Oto prosta podpowiedz:</p>
-        <p>Dolewamy wody do cebuli i czekamy az wyparuje, ponawiamy czynnosc 3-4 razy. Dziekuje za uwage.</p>
-    </div>
+        {{posts}}
+        {% for post in posts %}
+
+        <div>
+            <p>Opublikowany: {{ post.pblisuhed_date }} </p>
+            <h2>{{ post.title }}</h2>
+            <p> {{post.text|linebreaksbr}}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
